@@ -4,6 +4,6 @@ Whaddy::Application.routes.draw do
   devise_for :users
   resources :pages
   
-  root 'pages#home'
+  root 'products#index'
   get 'about' => 'pages#about'
 end
