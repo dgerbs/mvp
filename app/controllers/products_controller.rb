@@ -47,6 +47,7 @@ class ProductsController < ApplicationController
     def correct_user
       @product = current_user.products.find_by(id: params[:id])
       redirect_to products_path, notice: "Not authorized to edit this product" if @product.nil?
+    end
 
     def product_params
       params.require(:product).permit(:image, :description, :price, :sku, :brand, :condition, :weight, :availability, :shipping, :stock, :quantity)
