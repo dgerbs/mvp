@@ -49,6 +49,6 @@ class ProductsController < ApplicationController
       redirect_to products_path, notice: "Not authorized to edit this product" if @product.nil?
 
     def product_params
-      params.require(:product).permit(:description, :price, :sku, :brand, :condition, :weight, :availability, :shipping, :stock, :quantity)
+      params.require(:product).permit(:image, :description, :price, :sku, :brand, :condition, :weight, :availability, :shipping, :stock, :quantity)
     end
 end
