@@ -1,13 +1,12 @@
 <div id="products" class="transitions-enabled">
   <% @products.each do |product| %>
     <div class="box panel panel-default">
-      <%= image_tag product.image.url(:medium) %>
+      <%= link_to image_tag(product.image.url(:medium)), product %>
       <div class="panel-body">
         <%= product.description %>
-        <%= product.price %>
+        <strong><%= product.price %></strong>
         <%= product.availability %>
         <%= product.stock %>
-        <%= link_to 'Show', product %>
         <% if product.user == current_user %>
           <td><%= link_to 'Edit', edit_product_path(product) %></td>
           <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
