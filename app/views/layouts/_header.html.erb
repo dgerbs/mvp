@@ -19,7 +19,11 @@
         <% unless user_signed_in? %>
           <li><%= link_to "Sign in", new_user_session_path %></li>
         <% else %>
-          <li><%= link_to 'New Product', new_product_path %></li>
+          <li>
+            <%= link_to new_product_path do %>
+              <span class="glyphicon glyphicon-plus-sign"></span> Product
+            <% end %>
+          </li>
           <li><%= link_to "Account Settings", edit_user_registration_path %></li>
           <li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
         <% end %>
