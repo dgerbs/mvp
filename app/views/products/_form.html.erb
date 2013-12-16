@@ -1,3 +1,5 @@
+<div class="row">
+  <div class="col-md-4">
 <%= form_for @product, html: { multipart: true } do |f| %>
   <% if @product.errors.any? %>
     <div id="error_explanation">
@@ -60,3 +62,9 @@
     <%= f.submit class: "btn btn-primary" %>
   </div>
 <% end %>
+  <p>
+    <%= link_to 'Show', @product %> |
+    <%= link_to 'Back', products_path %>
+  </p>
+</div>
+</div>

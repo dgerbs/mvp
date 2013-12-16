@@ -1,7 +1,7 @@
 <%= link_to 'Back', products_path %>
 
 <div class="row">
-  <div class="col-md-offset-2 col-md-8">
+  <div class="col-md-offset-3 col-md-6">
     <div class="panel panel-default">
       <div class="panel-heading center">
         <%= image_tag @product.image.url(:medium) %>
@@ -18,6 +18,7 @@
           <%= @product.sku %>
         </p>
         <p>
+          <strong>Brand:</strong>
           <%= @product.brand %>
         </p>
         <p>
@@ -40,15 +41,7 @@
           <strong>Stock:</strong>
           <%= @product.stock %>
         </p>
-        <p>
-          <strong>Quantity:</strong>
-          <%= @product.quantity %>
-        </p>
-        <% if product.user == current_user %>
-          <%= link_to edit_product_path(@product) do %>
-            <span class="glyphicon glyphicon-edit"></span> Edit
-          <% end %>|
-        <% end %>
+
         <%= link_to "add to cart", '#', class: "btn btn-success btn-lg" %>
       </div>
     </div>

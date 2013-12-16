@@ -4,7 +4,8 @@ class ProductsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
 
   def index
-    @products = Product.all
+    @search = Product.search(params[:q])
+    @products = @search.result(distinct: true)
   end
 
   def show

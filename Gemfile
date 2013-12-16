@@ -14,6 +14,8 @@ gem 'bootstrap-sass'
 gem 'devise'
 gem 'paperclip'
 gem 'masonry-rails', '~> 0.2.0'
+gem 'ransack'
+gem 'table_print'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
